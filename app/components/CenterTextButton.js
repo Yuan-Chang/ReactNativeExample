@@ -24,13 +24,13 @@ export default class CenterTextButton extends Component{
 
 const styles = StyleSheet.create({
     ButtonContainer:{
-        height:40,
-        width:80,
+        alignSelf: 'flex-start',
         justifyContent:'center'
     },
     ButtonText:{
+        alignSelf: 'flex-start',
         color:"white",
-        padding:5,
+        padding:10,
         fontWeight:'bold',
         backgroundColor:"green",
         fontSize:18,
