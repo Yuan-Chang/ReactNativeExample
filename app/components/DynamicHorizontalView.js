@@ -3,41 +3,40 @@ import {Text, TouchableOpacity, StyleSheet, ActivityIndicator, View} from "react
 import CenterTextButton from "./CenterTextButton";
 import MyHorizontalListView from "./MyHorizontalListView";
 import {getServerURL} from "../global/Global"
+import {connect} from "react-redux"
 
 export default class DynamicHorizontalView extends Component {
 
+
+
     constructor() {
         super();
-        this.state = {
-            isLoading: true
-        }
+
     }
 
     render() {
 
-        if (this.props.visible != true) {
+        let loadingState = this.props.loadingState;
+
+        if (loadingState == 0) {
             return null;
         }
-        else if (this.state.isLoading) {
+        else if (loadingState == 1) {
 
             fetch(getServerURL()+"/getUsers").then((response) => response.json())
                 .then((responseJson) => {
 
                     console.log(responseJson);
 
-                    this.setState({
-                        isLoading: false,
-                        usersList: responseJson
-                    }, () => {
+                    this.props.setLoadingState(2);
+                    this.props.setUsers(responseJson);
 
-                    });
+
                 }).catch((error) => {
 
                 console.error(error);
 
-                this.setState({
-                    isLoading: false,
-                });
+                this.props.setLoadingState(2);
             })
 
             return (
@@ -51,7 +50,7 @@ export default class DynamicHorizontalView extends Component {
         }
         else {
             return (
-                <MyHorizontalListView data={this.state.usersList}/>
+                <MyHorizontalListView data={this.props.users}/>
             );
         }
 

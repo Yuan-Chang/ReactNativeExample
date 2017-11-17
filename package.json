@@ -12,13 +12,17 @@
 		"react-native-elements": "^0.17.0",
 		"react-native-loading-spinner-overlay": "^0.5.2",
 		"react-native-vector-icons": "^4.4.0",
-		"react-navigation": "1.0.0-beta.13"
+		"react-navigation": "1.0.0-beta.13",
+		"react-redux": "^5.0.6",
+		"redux": "^3.7.2",
+		"symbol-observable": "^1.0.4"
 	},
 	"devDependencies": {
 		"babel-jest": "21.2.0",
 		"babel-preset-react-native": "4.0.0",
 		"jest": "21.2.0",
-		"react-test-renderer": "16.0.0-alpha.12"
+		"react-test-renderer": "16.0.0-alpha.12",
+		"redux-devtools": "^3.4.1"
 	},
 	"jest": {
 		"preset": "react-native"

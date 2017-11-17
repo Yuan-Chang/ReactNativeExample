@@ -1,8 +1,8 @@
-import { userReducer } from "./loadUsersReducer"
+import { loadingDynamicListViewReducer } from "./loadingDynamicListViewReducer"
 import { combineReducers } from 'redux'
 
 const appReducer = combineReducers({
-    users: userReducer
+    loadingDynamicHorizontalView: loadingDynamicListViewReducer
 })
 
 export default appReducer
