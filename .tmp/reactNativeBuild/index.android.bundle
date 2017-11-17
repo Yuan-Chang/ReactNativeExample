@@ -68781,12 +68781,8 @@ function loadingDynamicListViewReducer() {
     switch (type) {
         case _actionTypes.SET_USERS:
             return _extends({}, state, { users: data });
-        case _actionTypes.GET_USERS:
-            return state.users;
         case _actionTypes.SET_LOADING_STATE:
             return _extends({}, state, { loadingState: data });
-        case _actionTypes.GET_LOADING_STATE:
-            return state.loadingState;
         default:
             return state;
 
@@ -68797,9 +68793,7 @@ __d(/* puzzle/app/actions/actionTypes.js */function(global, require, module, exp
   value: true
 });
 var SET_USERS = exports.SET_USERS = "SET_USERS";
-var GET_USERS = exports.GET_USERS = "GET_USERS";
 var SET_LOADING_STATE = exports.SET_LOADING_STATE = "SET_LOADING_STATE";
-var GET_LOADING_STATE = exports.GET_LOADING_STATE = "GET_LOADING_STATE";
 }, 571, null, "puzzle/app/actions/actionTypes.js");
 __d(/* puzzle/app/actions/index.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
@@ -68820,7 +68814,7 @@ Object.keys(_actionCreators).forEach(function (key) {
 __d(/* puzzle/app/actions/actionCreators.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.getLoadingState = exports.setLoadingState = exports.getUsers = exports.setUsers = undefined;
+exports.setLoadingState = exports.setUsers = undefined;
 
 var _actionTypes = require(571            ); // 571 = ./actionTypes
 
@@ -68828,16 +68822,8 @@ var setUsers = exports.setUsers = function setUsers(users) {
     return { type: _actionTypes.SET_USERS, data: users };
 };
 
-var getUsers = exports.getUsers = function getUsers() {
-    return { type: _actionTypes.GET_USERS };
-};
-
 var setLoadingState = exports.setLoadingState = function setLoadingState(loadingState) {
     return { type: _actionTypes.SET_LOADING_STATE, data: loadingState };
-};
-
-var getLoadingState = exports.getLoadingState = function getLoadingState() {
-    return { type: _actionTypes.GET_LOADING_STATE };
 };
 }, 573, null, "puzzle/app/actions/actionCreators.js");
 __d(/* puzzle/app/components/ConnectedDynamicHorizontalView.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {

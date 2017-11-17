@@ -8,12 +8,8 @@ export function loadingDynamicListViewReducer(state = {users:{},loadingState:0},
     {
         case SET_USERS:
             return { ... state, users : data};
-        case GET_USERS:
-            return state.users;
         case SET_LOADING_STATE:
             return { ... state, loadingState:data};
-        case GET_LOADING_STATE:
-            return state.loadingState;
         default:
             return state;
 
